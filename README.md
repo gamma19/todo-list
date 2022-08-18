@@ -1,4 +1,4 @@
-npm install
+npm install nodejs
 
 node index.js
 
