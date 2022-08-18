@@ -8,19 +8,19 @@
 
 <body>
 <div class="container">
-<h2 class="doubleborder"> A Simple ToDo List App </h2>
+<h2> A Simple ToDo List App </h2>
 
 
 <form action ="/addtask" method="POST">
 
-<input type="text" name="newtask" placeholder="add new task">
+<input style="margin-left: 10px;" type="text" name="newtask" placeholder="add new task">
 <button> Add Task </button>
 
 
 <h2> Current Tasks </h2>
 
 <% for( var i = 0; i < task.length; i++){ %>
-    <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+    <ul><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </ul>
 <% } %>
 
 <button formaction="/removetask" type="submit" id="top"> Completed Task </button>
@@ -29,7 +29,7 @@
 <h2> Completed Tasks </h2>
 
  <% for(var i = 0; i < complete.length; i++){ %>
-    <li><input type="checkbox" checked><%= complete[i] %> </li>
+    <ul><input type="checkbox" checked><%= complete[i] %> </ul>
 <% } %>
 
 </div>
