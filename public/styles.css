@@ -1,0 +1,61 @@
+* {
+    font-family: "lato", sans-serif;
+    font-weight: bold;
+}
+
+
+h2  {
+    color:rgb(255, 255, 255);
+    font-family: "Audiowide", sans-serif;
+    border: cyan;
+    font-size: 300%;
+
+}
+
+
+body {
+    background: rgb(245, 245, 245);
+    color: #333333;
+    margin-top: 20px;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    
+}
+
+
+.doubleborder{
+    border-style: double;
+    border-color: black;
+    text-align: center;
+    margin-right: 40%;
+
+}
+
+.container {
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+    margin-left: 40%;
+
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    color: rgb(255, 255, 255);
+    background-color: rgb(41, 90, 182);
+    height: 35px;
+    width: 150px;
+    border-radius: 20px;
+    font-family: "Audiowide", sans-serif;
+
+}
+
+li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 255, 255);
+    margin-bottom: 1%;
+}
