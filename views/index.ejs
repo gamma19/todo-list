@@ -8,8 +8,7 @@
 
 <body>
     <nav>
-        <button><a style="color: aliceblue;" href="http://localhost:3000/login">Login</a></button>
-        <button><a style="color: aliceblue;" href="http://localhost:3000/logout">Logout</a></button>
+        <a style="color: aliceblue" href="http://localhost:3000/logout"><button>Logout</button></a>
     </nav>
 <div class="container">
 <h2 style="font-size: 230% ; margin-left:4.5%"> A Simple ToDo List App </h2>
@@ -21,7 +20,7 @@
 <button> Add Task </button>
 
 
-<h2 style="margin-left: 2%"> Current Tasks </h2>
+<h2 style="margin-left: 1%; font-size: 192%;"> Current Tasks(not completed) </h2>
 
 <% for( var i = 0; i < task.length; i++){ %>
     <ul><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </ul>
@@ -33,7 +32,7 @@
 <h2 style="margin-left: 2%"> Completed Tasks </h2>
 
  <% for(var i = 0; i < complete.length; i++){ %>
-    <ul style="margin-bottom: 3%"><input type="checkbox" checked><%= complete[i] %> </ul>
+    <ul style="margin-bottom: 3%; text-decoration: line-through;"><input type="checkbox" checked><%= complete[i] %> </ul>
 <% } %>
 
 </div>

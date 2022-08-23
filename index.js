@@ -1,6 +1,5 @@
 //dependencies required for the app
 var express = require("express");
-var router = express.Router();
 var bodyParser = require("body-parser");
 var app = express();
 const { auth, requiresAuth } = require('express-openid-connect');
@@ -8,7 +7,7 @@ require('dotenv').config();
 
 app.use(
     auth({
-    authRequired: false,
+    authRequired: true,
     auth0Logout: true,
     secret: process.env.SECRET,
     baseURL: process.env.BASE_URL,
@@ -23,17 +22,16 @@ app.get("/login", (req, res) => {
 });
 
 
+
 app.get('/profile', requiresAuth(), (req, res) => {
-    res.redirect('/');
+    res.app(JSON.CLIENT_ID)
 });
 
-module.exports = router;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 //render css files
 app.use(express.static("public"));
-// auth router attaches /login, /logout, and /callback routes to the baseURL
 
 
 //placeholders
@@ -57,12 +55,14 @@ app.post("/removetask", function(req, res) {
         complete.push(completeTask);
         //check if the completed task already exits in the task when checked, then remove it
         task.splice(task.indexOf(completeTask), 1);
+        
     } else if (typeof completeTask === "object") {
         for (var i = 0; i < completeTask.length; i++) {
             complete.push(completeTask[i]);
             task.splice(task.indexOf(completeTask[i]), 1);
         }
     }
+
     res.redirect("/");
 });
 
