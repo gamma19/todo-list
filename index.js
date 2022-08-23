@@ -50,10 +50,8 @@ app.post("/addtask", function(req, res) {
 
 app.post("/removetask", function(req, res) {
     var completeTask = req.body.check;
-    //check for the "typeof" the different completed task, then add into the complete task
     if (typeof completeTask === "string") {
         complete.push(completeTask);
-        //check if the completed task already exits in the task when checked, then remove it
         task.splice(task.indexOf(completeTask), 1);
         
     } else if (typeof completeTask === "object") {
